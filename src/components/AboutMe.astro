@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import me from "../../src/images/me.png";
+import githubLight from "../../src/images/github-light.png";
+import linkedinLight from "../../src/images/linkedin-light.png";
+import Button from "./ui/Button.astro";
+---
+
+<section
+  id="about-me"
+  class="flex flex-col lg:flex-row gap-10 lg:gap-36 justify-center items-center"
+>
+  <div>
+    <span class="inline-block text-sm lg:text-base font-semibold mb-2"
+      >Hello there👋, I'm</span
+    >
+    <h1 class="text-2xl lg:text-4xl font-bold mb-1">Dimas Gilang Dwi Aji</h1>
+    <span class="inline-block text-base lg:text-lg font-medium mb-2"
+      >Software Developer | Tech Enthusiast</span
+    >
+    <p class="text-sm mb-4">
+      Bring your web ideas to life! I build web applications with a good user
+      experience on both the <strong>front-end</strong> and <strong
+        >back-end</strong
+      > sides.
+    </p>
+    <div class="flex items-center gap-3">
+      <a
+        href="https://github.com/ddim03"
+        class="bg-white border border-gray-500 p-2 rounded"
+        target="_blank"
+      >
+        <Image src={githubLight} alt="Github" loading="eager" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/dimasgda/"
+        target="_blank"
+        class="bg-white border border-gray-500 p-2 rounded"
+      >
+        <Image src={linkedinLight} alt="Linkedin" loading="eager" />
+      </a>
+      <a href="mailto:dimasgilang0803@gmail.com" target="_blank">
+        <Button variant="primary" className="py-2.5">Contact Me</Button>
+      </a>
+    </div>
+  </div>
+  <Image
+    src={me}
+    alt="Dimas Gilang Dwi Aji"
+    width={300}
+    class="border-b-8 rounded-sm border-gray-800"
+    loading="eager"
+  />
+</section>
