@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+import html from "../images/html-5-svgrepo-com.svg";
+import css from "../images/css-3-svgrepo-com.svg";
+import js from "../images/javascript-svgrepo-com.svg";
+import php from "../images/php-1-logo-svgrepo-com.svg";
+import nodejs from "../images/nodejs-icon-logo-svgrepo-com.svg";
+import laravel from "../images/laravel-svgrepo-com.svg";
+import reactjs from "../images/reactjs-svgrepo-com.svg";
+import mysql from "../images/mysql-logo-svgrepo-com.svg";
+import postgresql from "../images/postgresql-logo-svgrepo-com.svg";
+import vscode from "../images/vscode-svgrepo-com.svg";
+import bootstrap from "../images/bootstrap.svg";
+import tailwindcss from "../images/tailwind.svg";
+
+const skills = [
+  {
+    name: "HTML",
+    description: "Frontend",
+    image: html,
+  },
+  {
+    name: "CSS",
+    description: "Frontend",
+    image: css,
+  },
+  {
+    name: "JavaScript",
+    description: "Frontend",
+    image: js,
+  },
+  {
+    name: "Bootstrap",
+    description: "Frontend",
+    image: bootstrap,
+  },
+  {
+    name: "TailwindCSS",
+    description: "Frontend",
+    image: tailwindcss,
+  },
+  {
+    name: "ReactJS",
+    description: "Frontend",
+    image: reactjs,
+  },
+  {
+    name: "PHP",
+    description: "Backend",
+    image: php,
+  },
+  {
+    name: "NodeJS",
+    description: "Backend",
+    image: nodejs,
+  },
+  {
+    name: "Laravel",
+    description: "Fullstack",
+    image: laravel,
+  },
+  {
+    name: "MySQL",
+    description: "Database",
+    image: mysql,
+  },
+  {
+    name: "PosgreSQL",
+    description: "Database",
+    image: postgresql,
+  },
+  {
+    name: "Visual Studio Code",
+    description: "Tools",
+    image: vscode,
+  },
+];
+---
+
+<section id="skills">
+  <h2 class="text-xl font-semibold mb-2">Skills</h2>
+  <p class="text-sm text-muted">
+    The skills, tools and technologies I am good at
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+    {
+      skills.map((skill, index) => (
+        <div class="px-3 py-4 border rounded-sm flex items-center gap-4">
+          <Image
+            src={skill.image}
+            alt={skill.name}
+            class="w-12 h-auto"
+            loading={index > 3 ? "lazy" : "eager"}
+          />
+          <div class="space-y-2">
+            <p class="text-sm font-semibold">{skill.name}</p>
+            <small class="text-xs text-muted">{skill.description}</small>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
