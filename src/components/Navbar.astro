@@ -133,4 +133,24 @@ import Navlink from "./ui/Navlink.astro";
   };
 
   toggleNavbarButton.addEventListener("click", toggleNavbar);
+
+  const navLinks = document.querySelectorAll('a[href^="/#"]');
+  navLinks.forEach((navLink) => {
+    navLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").replace("/#", ""); // Mendapatkan ID target
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        toggleNavbar();
+        const elementPosition = targetElement.getBoundingClientRect().top; // Jarak elemen ke atas viewport
+        const offsetPosition = window.scrollY + elementPosition - 100; // Tambahkan offset -100px
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth", // Efek smooth scroll
+        });
+      }
+    });
+  });
 </script>
