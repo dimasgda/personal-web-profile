@@ -25,23 +25,28 @@ import Button from "./ui/Button.astro";
       > sides.
     </p>
     <div class="flex items-center gap-3">
-      <a
+      <Button
         href="https://github.com/ddim03"
-        class="bg-white border border-gray-500 p-2 rounded-sm"
         target="_blank"
+        variant="secondary"
+        className="p-2"
       >
         <Image src={githubLight} alt="Github" loading="eager" />
-      </a>
-      <a
+      </Button>
+      <Button
         href="https://www.linkedin.com/in/dimasgda/"
         target="_blank"
-        class="bg-white border border-gray-500 p-2 rounded-sm"
+        variant="secondary"
+        className="p-2"
       >
         <Image src={linkedinLight} alt="Linkedin" loading="eager" />
-      </a>
-      <a href="mailto:dimasgilang0803@gmail.com" target="_blank">
-        <Button variant="primary" className="py-2.5">Contact Me</Button>
-      </a>
+      </Button>
+      <Button
+        href="mailto:dimasgilang0803@gmail.com"
+        target="_blank"
+        variant="primary"
+        className="px-4 py-2.5">Contact Me</Button
+      >
     </div>
   </div>
   <div class="relative">

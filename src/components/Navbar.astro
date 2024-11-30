@@ -23,19 +23,17 @@ import Navlink from "./ui/Navlink.astro";
       <Navlink href="/blogs" text="Blogs" />
     </ul>
     <div class="flex gap-3">
-      <a
+      <Button
         href="https://drive.usercontent.google.com/download?id=1Y93Yu2d4qOb_J0p_ZPJ6AlFsz7VRnw2T&export=download&authuser=0&confirm=t&uuid=75398d2a-c065-48c9-9c8a-bc274b488087&at=AENtkXbW7M33EWeGH9JSl2syOI-V:1732971318488"
+        variant="primary"
+        className="hidden sm:inline-block px-4 py-2.5"
+        aria-label="Download CV">Download CV</Button
       >
-        <Button
-          variant="primary"
-          className="hidden sm:inline-block"
-          aria-label="Download CV">Download CV</Button
-        >
-      </a>
     </div>
-    <Button
-      variant="secondary"
-      className="sm:hidden !p-0 border-0"
+    <button
+      type="button"
+      class="sm:hidden !p-0 border-0"
+      aria-label="Toggle navigation"
       id="navbar-toggle-collapse"
     >
       <svg
@@ -52,7 +50,7 @@ import Navlink from "./ui/Navlink.astro";
           stroke-linejoin="round"
           d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg
       >
-    </Button>
+    </button>
   </div>
   <div
     class="w-full h-0 mx-auto sm:px-8 basis-full overflow-hidden transition-all duration-300 ease-in lg:hidden"
@@ -65,14 +63,12 @@ import Navlink from "./ui/Navlink.astro";
       <Navlink href="/blogs" text="Blogs" />
     </ul>
     <div class="flex gap-3">
-      <a
+      <Button
         href="https://drive.usercontent.google.com/download?id=1Y93Yu2d4qOb_J0p_ZPJ6AlFsz7VRnw2T&export=download&authuser=0&confirm=t&uuid=75398d2a-c065-48c9-9c8a-bc274b488087&at=AENtkXbW7M33EWeGH9JSl2syOI-V:1732971318488"
-        class="grow"
+        variant="primary"
+        className="w-full py-2.5 grow text-center"
+        aria-label="Download CV">Download CV</Button
       >
-        <Button variant="primary" className="w-full" aria-label="Download CV"
-          >Download CV</Button
-        >
-      </a>
     </div>
   </div>
 </nav>

@@ -1,5 +1,5 @@
 ---
-const { variant, type = "button", className, ...props } = Astro.props;
+const { variant, href, type = "button", className, ...props } = Astro.props;
 
 const classes = {
   primary:
@@ -8,10 +8,11 @@ const classes = {
 };
 ---
 
-<button
-  class={`text-sm py-2 px-4 rounded-sm ${classes[variant]} ${className}`}
+<a
+  href={href}
+  class={`text-sm rounded-sm ${classes[variant]} ${className}`}
   type={type}
   {...props}
 >
   <slot />
-</button>
+</a>
