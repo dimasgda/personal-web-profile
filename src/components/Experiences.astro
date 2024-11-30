@@ -1,0 +1,66 @@
+---
+import SectionHead from "./SectionHead.astro";
+import dlabs from "../images/dlabs.png";
+import JobCard from "./JobCard.astro";
+import dimfordev from "../images/ddimfordev.png";
+import agsatu from "../images/agsatu.png";
+
+const experiences = [
+  {
+    logo: dlabs,
+    jobTitle: "Web Developer",
+    company: "PT DLABS Indonesia Infotech - Internship",
+    startDate: "October 2024",
+    endDate: "Present",
+    descripttion: [],
+  },
+  {
+    logo: dimfordev,
+    jobTitle: "Freelance Web Developer",
+    company: "dimfordev - Freelance",
+    startDate: "December 2023",
+    endDate: "Present",
+    descripttion: [
+      "Communicated directly with clients to gather and clarify project requirements for accurate functionality.",
+      "Developed custom web applications tailored to client needs.",
+      "Managed full project lifecycles, from concept to delivery and post-launch support.",
+      "Provided technical consultation, offering solutions aligned with client goals and budgets.",
+      "Delivered high-quality, maintainable code while meeting project deadlines.",
+    ],
+  },
+  {
+    logo: agsatu,
+    jobTitle: "Web Developer",
+    company: "PT DLABS Indonesia Infotech - Internship",
+    startDate: "June 2024",
+    endDate: "August 2024",
+    descripttion: [
+      "Developed efficient APIs for mobile use, improving data access and functionality.",
+      "Built responsive and user-friendly interfaces with Vue.js and Tailwind CSS, enhancing user experience.",
+      "Worked closely with cross-functional teams to streamline front-end and back-end integration.",
+      "Applied web development best practices to boost performance and maintainability.",
+    ],
+  },
+];
+---
+
+<section id="experiences" class="pb-20">
+  <SectionHead
+    title="Experiences"
+    descripton="A summary of my journey, contributions and growth."
+  />
+  <div class="mt-8 space-y-6">
+    {
+      experiences?.map((experience) => (
+        <JobCard
+          logo={experience.logo}
+          jobTitle={experience.jobTitle}
+          company={experience.company}
+          startDate={experience.startDate}
+          endDate={experience.endDate}
+          description={experience.descripttion}
+        />
+      ))
+    }
+  </div>
+</section>

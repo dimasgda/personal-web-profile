@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+const { logo, jobTitle, company, startDate, endDate, description } =
+  Astro.props;
+---
+
+<div class="flex">
+  <Image
+    src={logo}
+    alt={company}
+    class="w-20 h-20 border rounded-sm mr-4"
+    loading="lazy"
+  />
+  <div class="space-y-4">
+    <h3 class="font-semibold">{jobTitle}</h3>
+    <small>{company}</small>
+    <br />
+    <small>{startDate} - {endDate}</small>
+    <ul class="list-disc list-inside text-sm">
+      {description.map((desc) => <li>{desc}</li>)}
+    </ul>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import postgresql from "../images/postgresql-logo-svgrepo-com.svg";
 import vscode from "../images/vscode-svgrepo-com.svg";
 import bootstrap from "../images/bootstrap.svg";
 import tailwindcss from "../images/tailwind.svg";
+import SectionHead from "./SectionHead.astro";
 
 const skills = [
   {
@@ -78,10 +79,10 @@ const skills = [
 ---
 
 <section id="skills">
-  <h2 class="text-xl font-semibold mb-2">Skills</h2>
-  <p class="text-sm text-muted">
-    The skills, tools and technologies I am good at
-  </p>
+  <SectionHead
+    title="Skills"
+    descripton="Tools and technologies I am good at"
+  />
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
     {
@@ -93,7 +94,7 @@ const skills = [
               src={skill.image}
               alt={skill.name}
               class="w-12 h-auto"
-              loading={index > 3 ? "lazy" : "eager"}
+              loading="lazy"
             />
             <div class="space-y-2">
               <p class="text-sm font-semibold">{skill.name}</p>
