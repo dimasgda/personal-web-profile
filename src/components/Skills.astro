@@ -16,47 +16,47 @@ import tailwindcss from "../images/tailwind.svg";
 const skills = [
   {
     name: "HTML",
-    description: "Frontend",
+    description: "Structure",
     image: html,
   },
   {
     name: "CSS",
-    description: "Frontend",
+    description: "Styling",
     image: css,
   },
   {
     name: "JavaScript",
-    description: "Frontend",
+    description: "Interactivity",
     image: js,
   },
   {
     name: "Bootstrap",
-    description: "Frontend",
+    description: "CSS Framework",
     image: bootstrap,
   },
   {
     name: "TailwindCSS",
-    description: "Frontend",
+    description: "CSS Framework",
     image: tailwindcss,
   },
   {
     name: "ReactJS",
-    description: "Frontend",
+    description: "Frontend Framework",
     image: reactjs,
   },
   {
     name: "PHP",
-    description: "Backend",
+    description: "Backend Logic",
     image: php,
   },
   {
     name: "NodeJS",
-    description: "Backend",
+    description: "Runtime Environment",
     image: nodejs,
   },
   {
     name: "Laravel",
-    description: "Fullstack",
+    description: "Fullstack Framework",
     image: laravel,
   },
   {
@@ -65,7 +65,7 @@ const skills = [
     image: mysql,
   },
   {
-    name: "PosgreSQL",
+    name: "PostgreSQL",
     description: "Database",
     image: postgresql,
   },
@@ -86,16 +86,19 @@ const skills = [
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
     {
       skills.map((skill, index) => (
-        <div class="px-3 py-4 border rounded-sm flex items-center gap-4">
-          <Image
-            src={skill.image}
-            alt={skill.name}
-            class="w-12 h-auto"
-            loading={index > 3 ? "lazy" : "eager"}
-          />
-          <div class="space-y-2">
-            <p class="text-sm font-semibold">{skill.name}</p>
-            <small class="text-xs text-muted">{skill.description}</small>
+        <div class="relative">
+          <div class="absolute top-0 left-0 w-full h-full bg-gray-800 rounded-sm" />
+          <div class="relative border rounded-sm flex items-center gap-4 bg-white px-3 py-4 hover:-translate-x-2 hover:-translate-y-2 transition-all duration-300 ease-in-out hover:border hover:border-gray-200 shadow-sm">
+            <Image
+              src={skill.image}
+              alt={skill.name}
+              class="w-12 h-auto"
+              loading={index > 3 ? "lazy" : "eager"}
+            />
+            <div class="space-y-2">
+              <p class="text-sm font-semibold">{skill.name}</p>
+              <small class="text-xs text-muted">{skill.description}</small>
+            </div>
           </div>
         </div>
       ))
