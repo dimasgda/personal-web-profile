@@ -150,6 +150,8 @@ import Navlink from "./ui/Navlink.astro";
           top: offsetPosition,
           behavior: "smooth", // Efek smooth scroll
         });
+      } else {
+        window.location.href = this.getAttribute("href");
       }
     });
   });
