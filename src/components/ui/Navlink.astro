@@ -1,10 +1,10 @@
 ---
-const { href, text, responsive = false } = Astro.props;
+const { href, text } = Astro.props;
 ---
 
-<a href={href} class={"relative group" + (responsive ? " w-fit" : "")}>
-  <li class="text-sm cursor-pointer">{text}</li>
+<li class="relative group w-fit">
+  <a href={href} class="text-sm cursor-pointer">{text}</a>
   <span
-    class={`${responsive ? "h-[2px]" : "h-[2.5px]"} w-full absolute -bottom-2 left-0 bg-gray-900 origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out`}
+    class="h-0.5 w-full absolute -bottom-2 left-0 bg-gray-900 origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"
   ></span>
-</a>
+</li>

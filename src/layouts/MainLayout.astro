@@ -10,6 +10,11 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={title} />
+    <meta name="author" content="Dimas Gilang Dwi Aji" />
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={title} />
+    <meta name="og:image" content="/favicon.svg" />
     <title>{title}</title>
   </head>
   <body class="antialiased scroll-smooth">
