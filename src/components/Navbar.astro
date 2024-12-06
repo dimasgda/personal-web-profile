@@ -116,7 +116,9 @@ import Navlink from "./ui/Navlink.astro";
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        toggleNavbar();
+        if (window.innerWidth < 600) {
+          toggleNavbar();
+        }
         const elementPosition = targetElement.getBoundingClientRect().top; // Jarak elemen ke atas viewport
         const offsetPosition = window.scrollY + elementPosition - 100; // Tambahkan offset -100px
 
