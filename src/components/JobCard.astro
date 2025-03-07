@@ -1,24 +1,25 @@
 ---
 import { Image } from "astro:assets";
 
-const { logo, jobTitle, company, startDate, endDate, description } =
+const { logo, jobTitle, company, startDate, endDate, description, link } =
   Astro.props;
 ---
 
 <div class="flex">
-  <Image
-    src={logo}
-    alt={company}
-    class="w-20 h-20 border rounded-sm mr-4"
-    loading="lazy"
-  />
+  <a
+    href={link}
+    target="_blank"
+    class="cursor-pointer border rounded-sm mr-4 w-20 h-20 grow-0 shrink-0"
+  >
+    <Image src={logo} alt={company} loading="lazy" />
+  </a>
   <div class="space-y-4">
     <h3 class="font-semibold">{jobTitle}</h3>
-    <small>{company}</small>
+    <a href={link}><small>{company}</small></a>
     <br />
     <small>{startDate} - {endDate}</small>
-    <ul class="list-disc list-inside text-sm">
-      {description.map((desc) => <li>{desc}</li>)}
+    <ul class="list-disc list-outside text-sm">
+      {description.map((desc) => <li class="ml-4">{desc}</li>)}
     </ul>
   </div>
 </div>

@@ -7,24 +7,22 @@ import agsatu from "../images/agsatu.png";
 
 const experiences = [
   {
-    logo: dlabs,
+    logo: agsatu,
     jobTitle: "Web Developer",
-    company: "PT DLABS Indonesia Infotech - Internship",
-    startDate: "October 2024",
+    company: "CV Agsatu - Internship",
+    link: "https://agsatu.com/",
+    startDate: "January 2024",
     endDate: "Present",
-    descripttion: [
-      "Developed the asset depreciation feature in the ERP system using Laravel.",
-      "Contributed to the development of the CMS module in the CRM system.",
-      "Collaborated with mobile developer for API integration.",
-    ],
+    description: [],
   },
   {
     logo: dimfordev,
     jobTitle: "Freelance Web Developer",
     company: "dimfordev - Freelance",
+    link: "https://github.com/ddimfordev",
     startDate: "December 2023",
     endDate: "Present",
-    descripttion: [
+    description: [
       "Communicated directly with clients to gather and clarify project requirements for accurate functionality.",
       "Developed custom web applications tailored to client needs.",
       "Managed full project lifecycles, from concept to delivery and post-launch support.",
@@ -33,12 +31,26 @@ const experiences = [
     ],
   },
   {
+    logo: dlabs,
+    jobTitle: "Web Developer",
+    company: "PT DLABS Indonesia Infotech - Internship",
+    link: "https://dlabs.id",
+    startDate: "October 2024",
+    endDate: "December 2024",
+    description: [
+      "Developed the asset depreciation feature in the ERP system using Laravel.",
+      "Contributed to the development of the CMS module in the CRM system.",
+      "Collaborated with mobile developer for API integration.",
+    ],
+  },
+  {
     logo: agsatu,
     jobTitle: "Web Developer",
     company: "CV Agsatu - Internship",
+    link: "https://agsatu.com/",
     startDate: "June 2024",
     endDate: "August 2024",
-    descripttion: [
+    description: [
       "Developed efficient APIs for mobile use, improving data access and functionality.",
       "Built responsive and user-friendly interfaces with Vue.js and Tailwind CSS, enhancing user experience.",
       "Worked closely with cross-functional teams to streamline front-end and back-end integration.",
@@ -62,7 +74,8 @@ const experiences = [
           company={experience.company}
           startDate={experience.startDate}
           endDate={experience.endDate}
-          description={experience.descripttion}
+          description={experience.description}
+          link={experience.link}
         />
       ))
     }
