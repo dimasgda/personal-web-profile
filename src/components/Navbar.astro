@@ -1,6 +1,14 @@
 ---
 import Button from "./ui/Button.astro";
 import Navlink from "./ui/Navlink.astro";
+
+const navlinks = [
+  { href: "/#about-me", text: "About Me" },
+  { href: "/#skills", text: "Skills" },
+  { href: "/#experiences", text: "Experiences" },
+  { href: "/#projects", text: "Projects" },
+  { href: "/#articles", text: "Articles" },
+];
 ---
 
 <nav
@@ -17,10 +25,7 @@ import Navlink from "./ui/Navlink.astro";
       @dimasgda
     </a>
     <ul class="hidden sm:flex items-center gap-8">
-      <Navlink href="/#about-me" text="About Me" />
-      <Navlink href="/#skills" text="Skills" />
-      <Navlink href="/#experiences" text="Experiences" />
-      <Navlink href="/blogs" text="Blogs" />
+      {navlinks.map(({ href, text }) => <Navlink href={href} text={text} />)}
     </ul>
     <div class="flex gap-3">
       <Button
@@ -57,10 +62,7 @@ import Navlink from "./ui/Navlink.astro";
     id="navbar-collapse"
   >
     <ul class="mt-2 flex flex-col gap-4 pt-2 pb-4">
-      <Navlink href="/#about-me" text="About Me" />
-      <Navlink href="/#skills" text="Skills" />
-      <Navlink href="/#experiences" text="Experiences" />
-      <Navlink href="/blogs" text="Blogs" />
+      {navlinks.map(({ href, text }) => <Navlink href={href} text={text} />)}
     </ul>
     <div class="flex gap-3">
       <Button
@@ -79,27 +81,24 @@ import Navlink from "./ui/Navlink.astro";
 
   const toggleNavbar = () => {
     if (navbarCollapse.classList.contains("h-auto")) {
-      // Collapse navbar
-      navbarCollapse.style.height = `${navbarCollapse.scrollHeight}px`; // Set current height
+      navbarCollapse.style.height = `${navbarCollapse.scrollHeight}px`;
       requestAnimationFrame(() => {
-        navbarCollapse.style.height = "0"; // Animate to 0
+        navbarCollapse.style.height = "0";
       });
       navbarCollapse.classList.remove("h-auto");
     } else {
-      // Expand navbar
-      navbarCollapse.style.height = "0"; // Reset to 0 for calculation
+      navbarCollapse.style.height = "0";
       navbarCollapse.classList.add("h-auto");
       requestAnimationFrame(() => {
-        navbarCollapse.style.height = `${navbarCollapse.scrollHeight}px`; // Animate to full height
+        navbarCollapse.style.height = `${navbarCollapse.scrollHeight}px`;
       });
     }
 
-    // Remove inline style after transition ends (to allow auto height if resized)
     navbarCollapse.addEventListener(
       "transitionend",
       () => {
         if (!navbarCollapse.classList.contains("h-auto")) {
-          navbarCollapse.style.height = ""; // Reset height
+          navbarCollapse.style.height = "";
         }
       },
       { once: true }
@@ -112,19 +111,19 @@ import Navlink from "./ui/Navlink.astro";
   navLinks.forEach((navLink) => {
     navLink.addEventListener("click", function (e) {
       e.preventDefault();
-      const targetId = this.getAttribute("href").replace("/#", ""); // Mendapatkan ID target
+      const targetId = this.getAttribute("href").replace("/#", "");
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
         if (window.innerWidth < 600) {
           toggleNavbar();
         }
-        const elementPosition = targetElement.getBoundingClientRect().top; // Jarak elemen ke atas viewport
-        const offsetPosition = window.scrollY + elementPosition - 100; // Tambahkan offset -100px
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = window.scrollY + elementPosition - 100;
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth", // Efek smooth scroll
+          behavior: "smooth",
         });
       } else {
         window.location.href = this.getAttribute("href");
