@@ -31,6 +31,11 @@ const skills = [
     image: js,
   },
   {
+    name: "PHP",
+    description: "Backend Logic",
+    image: php,
+  },
+  {
     name: "Bootstrap",
     description: "CSS Framework",
     image: bootstrap,
@@ -44,11 +49,6 @@ const skills = [
     name: "ReactJS",
     description: "Frontend Library",
     image: reactjs,
-  },
-  {
-    name: "PHP",
-    description: "Backend Logic",
-    image: php,
   },
   {
     name: "NodeJS",
@@ -84,25 +84,58 @@ const skills = [
     description="Tools and technologies I am good at"
   />
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-    {
-      skills.map((skill) => (
-        <div class="relative">
-          <div class="absolute top-0 left-0 w-full h-full bg-gray-800 rounded-sm" />
-          <div class="relative border rounded-sm flex items-center gap-4 bg-white px-3 py-4 hover:-translate-x-2 hover:-translate-y-2 transition-all duration-300 ease-in-out hover:border hover:border-gray-200 shadow-sm">
-            <Image
-              src={skill.image}
-              alt={skill.name}
-              class="w-12 h-auto"
-              loading="eager"
-            />
-            <div class="space-y-2">
-              <p class="text-sm font-semibold">{skill.name}</p>
-              <small class="text-xs text-muted">{skill.description}</small>
+  <div class="relative">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 overflow-hidden md:h-auto max-h-[calc(4*theme('spacing.20')+theme('spacing.4'))] sm:max-h-none transition-all duration-300 ease-in-out"
+      id="skills-container"
+    >
+      {
+        skills.map((skill) => (
+          <div class="relative">
+            <div class="absolute top-0 left-0 w-full h-full bg-gray-800 rounded-sm" />
+            <div class="relative border rounded-sm flex items-center gap-4 bg-white px-3 py-4 hover:-translate-x-2 hover:-translate-y-2 transition-all duration-300 ease-in-out hover:border hover:border-gray-200 shadow-sm">
+              <Image
+                src={skill.image}
+                alt={skill.name}
+                class="w-12 h-auto"
+                loading="eager"
+              />
+              <div class="space-y-2">
+                <p class="text-sm font-semibold">{skill.name}</p>
+                <small class="text-xs text-muted">{skill.description}</small>
+              </div>
             </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
+    <div
+      id="skills-shadow"
+      class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white sm:hidden transition-all duration-300 ease-in-out"
+    >
+    </div>
   </div>
+  <button
+    class="text-sm text-gray-500 mx-auto mt-4 block sm:hidden"
+    id="show-skills-button"
+  >
+    Show more
+  </button>
 </section>
+
+<script>
+  const showSkillsButton = document.getElementById("show-skills-button");
+  const skillsSection = document.getElementById("skills-container");
+  const skillsShadow = document.getElementById("skills-shadow");
+  let isOpen = false;
+
+  showSkillsButton.addEventListener("click", () => {
+    skillsSection.classList.toggle(
+      "max-h-[calc(4*theme('spacing.20')+theme('spacing.4'))]"
+    );
+    skillsShadow.classList.toggle("hidden");
+
+    showSkillsButton.innerText = isOpen ? "Show more" : "Show less";
+    isOpen = !isOpen;
+  });
+</script>
