@@ -6,8 +6,6 @@ const navlinks = [
   { href: "/#about-me", text: "About Me" },
   { href: "/#skills", text: "Skills" },
   { href: "/#experiences", text: "Experiences" },
-  { href: "/#projects", text: "Projects" },
-  { href: "/#articles", text: "Articles" },
 ];
 ---
 
@@ -27,7 +25,12 @@ const navlinks = [
     <ul class="hidden sm:flex items-center gap-8">
       {navlinks.map(({ href, text }) => <Navlink href={href} text={text} />)}
     </ul>
-    <div class="flex gap-3">
+    <div class="flex gap-3 items-center">
+      <a
+        href="https://dimasgda.vercel.app"
+        class="hidden sm:inline-block text-sm text-neutral-600"
+        target="_blank">v2✨(ongoing)</a
+      >
       <Button
         href="https://drive.usercontent.google.com/download?id=1ot7kSzHnwHMtrLi2aIlCjD5y594gn7Io&export=download&authuser=0&confirm=t&uuid=19b1e293-b500-4439-b8aa-2f24bfd875a4&at=AEz70l5eBSym1-EyEIUexWkKzsiw:1743436864913"
         variant="primary"
@@ -64,9 +67,14 @@ const navlinks = [
     <ul class="mt-2 flex flex-col gap-4 pt-2 pb-4">
       {navlinks.map(({ href, text }) => <Navlink href={href} text={text} />)}
     </ul>
-    <div class="flex gap-3">
+    <div class="flex gap-3 items-center flex-col">
+      <a
+        href="https://dimasgda.vercel.app"
+        class="inline-block text-sm text-neutral-600"
+        target="_blank">v2✨(ongoing)</a
+      >
       <Button
-        href="https://drive.usercontent.google.com/download?id=1Y93Yu2d4qOb_J0p_ZPJ6AlFsz7VRnw2T&export=download&authuser=0&confirm=t&uuid=75398d2a-c065-48c9-9c8a-bc274b488087&at=AENtkXbW7M33EWeGH9JSl2syOI-V:1732971318488"
+        href="https://drive.usercontent.google.com/download?id=1zF0CDl0dCngZ9Eeh_2dUMknowzjsMwod&export=download&authuser=0&confirm=t&uuid=bfaf3e8b-b749-412c-ab52-42b2e489b91d&at=APcmpoxJBRkAFg5EvQYBYfDSPY2m:1745276452549"
         variant="primary"
         className="w-full py-2.5 grow text-center"
         aria-label="Download CV">Download CV</Button
